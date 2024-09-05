@@ -10,11 +10,11 @@ on:
       MANIFEST_BRANCH:
         description: 'MANIFEST_BRANCH'
         required: true
-        default: 'twrp-11'
+        default: 'twrp-12.1'
       DEVICE_TREE_URL:
         description: 'DEVICE_TREE_URL'
         required: true
-        default: 'https://github.com/r3nzph/android_device_tecno_TECNO-KJ5.git'
+        default: 'https://github.com/r3nzph/twrp_TECNO-KJ5.git'
       DEVICE_TREE_BRANCH:
         description: 'DEVICE_TREE_BRANCH'
         required: true
@@ -101,8 +101,8 @@ jobs:
         mkdir workspace
         cd workspace
         echo "workspace-folder=$(pwd)" >> $GITHUB_OUTPUT
-        git config --global user.name "kaii-lb"
-        git config --global user.email "imkaiilb@gmail.com"
+        git config --global user.name "r3nzph"
+        git config --global user.email "abarracosorenznino@gmail.com"
         repo init --depth=1 -u ${{ github.event.inputs.MANIFEST_URL }} -b ${{ github.event.inputs.MANIFEST_BRANCH }}
       id: pwd
           
@@ -131,13 +131,6 @@ jobs:
         cond: ${{ github.event.inputs.MANIFEST_BRANCH == 'twrp-11' || github.event.inputs.MANIFEST_BRANCH == 'twrp-12.1' }}
         if_true: twrp
         if_false: omni
-
-    - name: Sync Device Dependencies
-      run: |
-        bash ${GITHUB_WORKSPACE}/convert.sh ${{ github.event.inputs.DEVICE_PATH }}/${{ steps.buildtree.outputs.value }}.dependencies
-        repo sync -j$(nproc --all)
-      working-directory: ${{ steps.pwd.outputs.workspace-folder }}
-      continue-on-error: true
 
     - name: Set Swap Space
       uses: pierotofy/set-swap-space@master
