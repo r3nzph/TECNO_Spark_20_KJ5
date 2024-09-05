@@ -5,10 +5,12 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/tecno/TECNO-KJ5
+DEVICE_PATH := device/tecno/KJ5
 
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
+BUILD_BROKEN_DUP_RULES := true
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
 # A/B
 AB_OTA_UPDATER := true
@@ -41,7 +43,7 @@ TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a53
 OVERRIDE_TARGET_FLATTEN_APEX := true
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := TECNO-KJ5
+TARGET_BOOTLOADER_BOARD_NAME := KJ5
 TARGET_NO_BOOTLOADER := true
 
 # Display
