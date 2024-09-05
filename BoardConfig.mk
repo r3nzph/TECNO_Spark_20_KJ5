@@ -148,6 +148,16 @@ TW_EXCLUDE_TWRPAPP := true
 # TWRP-Specific configuration
 TW_EXCLUDE_APEX := true
 
+# Recovery
+BOARD_USES_RECOVERY_AS_BOOT := true
+BOARD_HAS_NO_SELECT_BUTTON := true
+BOARD_HAS_LARGE_FILESYSTEM := true
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
+TARGET_RECOVERY_INITRC := $(DEVICE_PATH)/recovery/root/init.recovery.mt6768.rc
+TW_NO_LEGACY_PROPS := true
+TARGET_NO_RECOVERY := true
+TW_HAS_NO_RECOVERY_PARTITION := true
 
 # Density / StatusBar
 TW_FRAMERATE := 90
