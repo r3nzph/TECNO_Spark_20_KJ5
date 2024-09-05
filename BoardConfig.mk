@@ -148,7 +148,7 @@ TW_EXCLUDE_TWRPAPP := true
 # TWRP-Specific configuration
 TW_EXCLUDE_APEX := true
 
-# Recovery
+# Recovery Configs
 BOARD_USES_RECOVERY_AS_BOOT := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_HAS_LARGE_FILESYSTEM := true
