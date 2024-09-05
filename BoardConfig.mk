@@ -53,7 +53,7 @@ OVERRIDE_TARGET_FLATTEN_APEX := true
 # Bootloader
 TARGET_NO_RADIOIMAGE := true
 TARGET_NO_BOOTLOADER := true
-TARGET_BOOTLOADER_BOARD_NAME := KG5n
+TARGET_BOOTLOADER_BOARD_NAME := KJ5
 TARGET_USES_UEFI := true
 
 # Display
@@ -76,6 +76,9 @@ BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 TARGET_KERNEL_CONFIG := TECNO-KJ5_defconfig
 TARGET_KERNEL_SOURCE := kernel/tecno/TECNO-KJ5
+
+# TEMP
+TW_CUSTOM_CPU_TEMP_PATH = /sys/devices/platform/soc/soc:aon/64200000.spi/spi_master/spi4/spi4.0/sc27xx-fgu/power_supply/sc27xx-fgu/temp
 
 # Kernel - prebuilt
 TARGET_FORCE_PREBUILT_KERNEL := true
